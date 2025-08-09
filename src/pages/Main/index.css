@@ -1,102 +1,155 @@
-.Container{
-   max-width: 700px;
-   background: #FFF;
-   border-radius: 4px;
-   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
-   padding: 30px;
-   margin: 80px auto;
+/* Fundo com gradiente */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a993fe, #7e61e7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  font-family: 'Inter', sans-serif;
 }
 
-h1{
-    font-size: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+.Container {
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  padding: 30px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.add{
-    margin-right: 10px;
+h1 {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  color: #333;
 }
 
-.spinner{
-    margin-right: 10px;
-    animation: rotate 2s linear infinite;
+.github {
+  margin-right: 10px;
+  color: #7e61e7;
 }
 
-.github{
-    margin-right: 10px;
+form {
+  margin-top: 25px;
+  display: flex;
 }
 
-form{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
+.input, .input-error {
+  flex: 1;
+  border: 2px solid transparent;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
 }
 
-.input{
-    flex: 1;
-    border: 1px solid #eee;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-size: 16px;
+.input:focus {
+  border-color: #7e61e7;
+  background-color: #fff;
 }
 
-.input-error{
-    flex: 1;
-    border: 1px solid #eee;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-size: 16px;
-    border-color: red;
+.input-error {
+  border-color: red;
 }
 
-.SubmitButton{
-    background: #7159c1;
-    border: 0;
-    padding: 0 15px;
-    margin-left: 10px;
-    border-radius: 4px;
-    padding-right: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.SubmitButton {
+  background: #7e61e7;
+  border: none;
+  margin-left: 10px;
+  padding: 0 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
-
-
-
-@keyframes rotate{
-    from {
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
+.SubmitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(126, 97, 231, 0.3);
 }
 
-.List{
-    list-style: none;
-    margin-top: 30px;
-    
-
-      
+.spinner {
+  animation: rotate 1s linear infinite;
 }
 
-li{
-    padding: 15px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-   & + li{
-    border-top: 1px solid #eee;
-   }
+.error-message {
+  margin-top: 8px;
+  color: red;
+  font-size: 14px;
 }
 
-a{
-    color: #7159c1;
-    text-decoration: none;
-    } 
+.List {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+}
+
+.repo-card {
+  background: #f7f6ff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideUp 0.3s ease;
+}
+
+.repo-card span {
+  font-weight: 500;
+  color: #333;
+}
+
+.details-link {
+  text-decoration: none;
+  color: #7e61e7;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+}
+
+.details-link:hover {
+  color: #a993fe;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  background: #eaf4ff;
+  color: #0d3b66;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  gap: 8px;
+  border: 1px solid #bcdfff;
+  margin-top: 10px;
+}
+
+.info-icon {
+  color: #1d6ff2;
+  font-size: 18px;
+}
